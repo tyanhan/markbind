@@ -1,11 +1,9 @@
 <template>
-    <div>
-        <button v-if="!isShowInlineText" v-on:click="isShowInlineText = !isShowInlineText;" class=inline-panel>
-            {{ header }}
-        </button>
-        <div v-else>
-            <slot></slot>
-        </div>
+    <button v-if="!isShowInlineText" v-on:click="isShowInlineText = !isShowInlineText;" class=inline-button>
+        {{ header }}
+    </button>
+    <div v-else class=inline-text>
+        <slot></slot>
     </div>
 </template>
 
@@ -27,7 +25,11 @@ export default {
 </script>
 
 <style>
-.inline-panel {
+.inline-text {
+    display: inline-block;
+}
+
+.inline-button {
     border: 1px solid #ddd;
     padding: 4px 6px;
     border-radius: 3px;
