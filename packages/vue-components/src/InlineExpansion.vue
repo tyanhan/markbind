@@ -1,13 +1,14 @@
 <template>
-    <button v-if="!isShowInlineText" v-on:click="isShowInlineText = !isShowInlineText;" class=inline-button>
-        {{ header }}
-    </button>
-    <div v-else class=inline-text>
-        <slot></slot>
-    </div>
+  <button v-if="!isShowInlineText" class=inline-button v-on:click="isShowInlineText = !isShowInlineText;" >
+    {{ header }}
+  </button>
+  <div v-else class=inline-text>
+    <slot></slot>
+  </div>
 </template>
 
 <script>
+
 export default {
   name: 'InlineExpansion',
   props: {
@@ -18,10 +19,10 @@ export default {
   },
   data() {
     return {
-        isShowInlineText : false,
+      isShowInlineText: false,
     }
   },
-}
+};
 </script>
 
 <style>
